@@ -5,3 +5,4 @@ package.json
 sass/
 node_modules/
 config.rb
+/docpad
