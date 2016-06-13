@@ -32,31 +32,36 @@
            <style>
             x-gallery, gallery-group {display:block;}
             x-gallery{
-                height:90%;
-            }
-            .filmstrip{
-                height:20%;
             }
             .filmstrip img{
-                height:100%;
+                transition:height 0.5s ease;
+                height:20vh;
             }
+            .filmstrip.small img{
+                height:15vh;
+            }
+            
             .viewer{
-                height:80%;
+                height:0;
                 overflow-x:auto;
                 overflow-y:hidden;
                 -ms-overflow-style: none;
                 display:flex;
-                flex-wrap:nowrap:
+                flex-wrap:nowrap;
+                background-color:black;
+            }
+            .viewer.show{
+                height:Calc(85vh - 73.6px);
             }
             .viewer::-webkit-scrollbar { width: 0 !important }
             .viewer div{
-                min-width:100%;
+                width:100%;
                 display:block;
                 height:100%;
                 background-position: center center;
                 background-repeat: no-repeat;
                 background-clip: border-box;
-                background-size: cover;  
+                background-size: contain;  
             }
            </style>
            <div class="filmstrip">
@@ -69,12 +74,24 @@
            for (let img of imageCollecton){
                let thumbimg = document.createElement("img");
                thumbimg.src = this.dataset.thumbnailpath+ img.parentNode.dataset.catpath +img.dataset.src;
+               thumbimg.dataset.fullpath = this.dataset.fullpath + img.parentNode.dataset.catpath + img.dataset.src;
                filmstrip.appendChild(thumbimg);
-               let fullimg = document.createElement("div");
-               fullimg.style.backgroundImage = `url("`+ this.dataset.fullpath + img.parentNode.dataset.catpath + img.dataset.src +`")`;
-               viewer.appendChild(fullimg);
            }
+           let class_gallery = document.querySelector(".gallery");
            imageCollecton = null; 
+           var fullimg = document.createElement("div");
+           viewer.appendChild(fullimg);
+           filmstrip.addEventListener("click",function(evt){
+               event.preventDefault();
+               class_gallery.style.minHeight = "100vh";
+               
+               filmstrip.classList.add("small")
+               setTimeout(function(){viewer.classList.add("show");},520);
+               let fullpath = event.target.dataset.fullpath;
+               if(fullpath != null || fullpath != undefined){
+                   fullimg.style.backgroundImage = `url("`+fullpath+`")`;
+               }
+           },false);
        }
    }
    class ArticleGroup extends HTMLDivElement{
