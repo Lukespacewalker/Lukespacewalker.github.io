@@ -5,48 +5,115 @@
   <meta charset="utf-8">
   <meta name="description" content="">
   <meta name="author" content="">
-  <title>Portfolio</title>
+  <title>Out Of Box : Portfolio Of Suttisak</title>
+    
   <link href="stylesheets/screen.css" rel="stylesheet">
   <script src="http://127.0.0.1:35729/livereload.js"></script>
+  <script src="script/angular.min.js"></script>
+  <script src="script/webcomponents.min.js"></script>
+  <script src="script/main.js">
+
+  </script>
 </head>
 
 <body>
-  <div class="container">
-    <header>
-      <div class="logo">
+  <outer-container>
+    <header style="position: fixed;width: 100vw;box-sizing: border-box;">
+      <x-logo>
         <p>OUT OF</p><b>BOX</b><p style="color:rgb(20,20,20);border-color:rgb(255, 204, 0);background-color:rgb(255, 204, 0);border-left:0px;">β</p>
-      </div>
-      <div style="flex:auto">
+      </x-logo>
+      <div style="flex:auto" class="gutter">
       </div>
       <nav>
         <button>Photography</button>
         <button>Project</button>
         <button>Blog</button>
-        <button>Contact</button>
+        <button>About Me</button>
       </nav>
     </header>
-
-    <div class="title">
-      <p>Hola ! I am <b>Luke</b>.
+    <intro-text>
+      <p>Hello ! I am <b>Luke</b>.
         <br />an enthusiast in <b>photography</b>, <b>coding</b>, <b>gaming</b>. </p>
-    </div>
-    <main class="content">
+    </intro-text>
+    <main>
       <section class="gallery">
-        <h1>Photography</h1>
-        <div class="imageBox" style="background-image:url('images/gallery/Chocolate Factory.jpg')">
-        </div>
+        <header>
+          <x-caption data-desc="Best of my works">Photography</x-caption>
+        <nav>
+          <button>Star</button>
+          <button>South Korea</button>
+        </nav>
+        </header>
+        <x-gallery data-thumbnailpath="images/gallery/thumbnail/" data-fullpath="images/gallery/full/">
+          <gallery-group data-cat="Night Life" data-catpath="Night Life/" >
+          <img data-src="Bangkok.jpg"/>
+          <img data-src="Bridge.jpg"/>
+          <img data-src="Bridge2.jpg"/>
+          </gallery-group>
+        </x-gallery>
       </section>
-      <section>
-        <h1>Project</h1>
-        <ul>
-          <li>
-            Comic Book Reader
-          </li>
-          <li>
-            Name Randomizer
-          </li>
+      <section class="project">
+        <header>
+          <x-caption data-desc="What I've Done So Far">Projects</x-caption>
+        </header>
+        <article-group data-name="Pending">
+          <article>
+            <h1>Comic Book Reader For Windows 10</h1>
+            <figure>
+            </figure>
+            <h2>Features</h2>
+            <ul>
+              <li>Fully Touch-enable UWP application for Windows 10 and Windows 10 Mobile</li>
+              <li>Support CBR,CBZ,ZIP,RAR files or Image Folder</li>
 
-        </ul>
+            </ul>
+            <p></p>
+          </article>
+        </article-group>
+        <article-group data-name="Finished">
+          <article>
+            <h1>Name Randomizer</h1>
+            <figure>
+              
+              <figcaption>Application Interface</figcaption>
+            </figure>
+            <h2>Features</h2>
+            <ul>
+              <li>Randomly select a name from a customizable pool.</li>
+              <li>Exclude unwanted names by using an exclusion list.</li>
+              <li>Nice dark interface complying with Windows 10 modern UI.</li>
+            </ul>
+            <hr>
+            <p>I wrote this software because I want a good method to randomly select classmates to be participated in a presentation when I was a medical student.
+              I also use this program as a way to practice C# language.
+              It has been created by using C# language in Visual Studio 2015. 
+            </p>
+          </article>
+        </article-group>
+      </section>
+      <section class="about">
+        <header>
+          <x-caption data-desc="Now you want to know">About Me</x-caption>
+        </header>
+        <article-group data-name="Follow Me">
+          <article>
+            <p>
+              <h1>500px</h1>
+              <a>https://500px.com/lukespacewalker</a>
+            </p>
+            <p>
+              <h1>Facebook</h1>
+              <a>https://500px.com/lukespacewalker</a>
+            </p>
+          </article>
+        </article-group>
+        <article-group data-name="Who am I">
+          <article>
+            <figure>
+            </figure>
+            <p>IA</p>
+          </article>
+        </article-group>
       </section>
     </main>
 
@@ -62,7 +129,7 @@
         Hosted at GitHubPage
       </section>
     </footer>
-  </div>
+  </outer-container>
 </body>
 
 </html>
