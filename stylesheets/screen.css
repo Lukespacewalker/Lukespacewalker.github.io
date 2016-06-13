@@ -167,13 +167,11 @@ main {
   color: #141414;
   flex-wrap: wrap; }
   main section {
-    height: 100vh;
     padding: 0px;
     background-color: #141414;
     color: #f0f0f0; }
     main section header {
-      box-sizing: border-box;
-      height: 10%; }
+      box-sizing: border-box; }
     main section article-group {
       background-color: #f0f0f0;
       color: #141414;
@@ -183,6 +181,8 @@ main {
       color: #141414; }
       main section article h1 {
         font-size: 1.5rem; }
+  main section.gallery {
+    height: 95vh; }
 
 footer {
   display: flex;
