@@ -59,12 +59,43 @@ elements-of-type(html5-block) {
 
 /* Global Color Scheme */
 /* Global Style */
+@media only screen and (max-width: 646px) {
+  header {
+    text-align: center;
+    padding: 0.8em;
+    justify-content: center; }
+    header .gutter {
+      display: none; }
+    header nav {
+      text-align: center; }
+  intro-text {
+    font-size: 2rem; }
+  article {
+    flex-wrap: wrap !important; }
+  figure {
+    order: 0 !important; }
+    figure img {
+      width: 100% !important; } }
+
+@media only screen and (min-width: 647px) and (max-width: 768px) {
+  header {
+    padding: 0.8em; }
+  intro-text {
+    font-size: 2rem; }
+  article {
+    flex-wrap: wrap !important; }
+  figure {
+    order: 0 !important; }
+    figure img {
+      width: 100% !important; } }
+
 html {
   font-family: 'Segoe UI'; }
 
 /* Style */
 body {
   cursor: default;
+  overflow-x: hidden;
   -ms-overflow-style: none;
   background: url("../images/cover.jpg");
   background-position: center center;
@@ -77,8 +108,7 @@ body::-webkit-scrollbar {
   width: 0 !important; }
 
 outer-container {
-  display: block;
-  overflow: auto; }
+  display: block; }
 
 @-moz-document url-prefix() {
   body {
@@ -144,7 +174,7 @@ header {
 intro-text {
   transform: all 0.5 ease;
   display: block;
-  height: 85vh;
+  height: 100vh;
   text-align: center;
   font-size: 3rem;
   line-height: 1.5em; }
@@ -173,13 +203,36 @@ main {
     main section header {
       box-sizing: border-box;
       min-height: auto; }
+    main section .flex-container {
+      display: flex;
+      overflow: auto;
+      scroll-snap-points-x: repeat(100vw);
+      scroll-snap-type: mandatory;
+      -ms-scroll-snap-points-x: repeat(100vw);
+      -ms-scroll-snap-type: mandatory;
+      -ms-overflow-style: none; }
     main section article-group {
+      white-space: normal;
+      box-sizing: border-box;
+      vertical-align: middle;
       background-color: #f0f0f0;
+      min-height: 50vh;
+      min-width: 100vw;
       color: #141414;
-      padding: 1em 2em 1em 4em; }
+      padding: 1.5em 2em 1.5em 2em; }
+    main section .flex-container::-webkit-scrollbar {
+      display: none; }
     main section article {
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: center;
       letter-spacing: 0.02em;
       color: #141414; }
+      main section article figure {
+        order: 99;
+        display: inline-block; }
+        main section article figure img {
+          width: 600px; }
       main section article h1 {
         font-size: 1.5rem; }
   main section.gallery {
@@ -199,21 +252,3 @@ footer {
       letter-spacing: 0.1em;
       padding: 1rem 0rem 1rem 0rem;
       font-weight: bolder; }
-
-@media only screen and (max-width: 646px) {
-  header {
-    text-align: center;
-    padding: 0.8em;
-    justify-content: center; }
-    header .gutter {
-      display: none; }
-    header nav {
-      text-align: center; }
-  intro-text {
-    font-size: 2rem; } }
-
-@media only screen and (min-width: 647px) and (max-width: 768px) {
-  header {
-    padding: 0.8em; }
-  intro-text {
-    font-size: 2rem; } }

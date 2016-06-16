@@ -9,7 +9,6 @@
     
   <link href="stylesheets/screen.css" rel="stylesheet">
   <script src="http://127.0.0.1:35729/livereload.js"></script>
-  <script src="script/angular.min.js"></script>
   <script src="script/webcomponents.min.js"></script>
   <script src="script/main.js">
 
@@ -24,11 +23,11 @@
       </x-logo>
       <div style="flex:auto" class="gutter">
       </div>
-      <nav>
-        <button>Photography</button>
-        <button>Project</button>
+      <nav id="mainnav">
+        <button data-target="#gallery" >Photography</button>
+        <button data-target="#project">Project</button>
         <button>Blog</button>
-        <button>About Me</button>
+        <button data-target="#about">About Me</button>
       </nav>
     </header>
     <intro-text>
@@ -37,7 +36,7 @@
         <br />A physician with an enthusiasm in <b>photography</b>, <b>coding</b>, <b>gaming</b>. </p>
     </intro-text>
     <main>
-      <section class="gallery">
+      <section id="gallery" class="gallery">
         <header>
           <x-caption data-desc="Best of my works">Photography</x-caption>
         <nav>
@@ -53,15 +52,18 @@
           </gallery-group>
         </x-gallery>
       </section>
-      <section class="project">
+      <section id="project" class="project">
         <header>
           <x-caption data-desc="What I've Done So Far">Projects</x-caption>
         </header>
+        <div class="flex-container">
         <article-group data-name="Pending">
           <article>
-            <h1>Comic Book Reader For Windows 10</h1>
+            
             <figure>
             </figure>
+             <div>
+            <h1>Comic Book Reader For Windows 10</h1>
             <h2>Features</h2>
             <ul>
               <li>Fully Touch-enable UWP application for Windows 10 and Windows 10 Mobile</li>
@@ -69,15 +71,18 @@
 
             </ul>
             <p></p>
+            </div>
           </article>
         </article-group>
         <article-group data-name="Finished">
           <article>
-            <h1>Name Randomizer</h1>
+            
             <figure>
-              
+              <img src="images/program/name_randomizer.png"></img>
               <figcaption>Application Interface</figcaption>
             </figure>
+            <div>
+              <h1>Name Randomizer</h1>
             <h2>Features</h2>
             <ul>
               <li>Randomly select a name from a customizable pool.</li>
@@ -89,13 +94,16 @@
               I also use this program as a way to practice C# language.
               It has been created by using C# language in Visual Studio 2015. 
             </p>
+            </div>
           </article>
         </article-group>
+        </div>
       </section>
-      <section class="about">
+      <section id="about" class="about">
         <header>
           <x-caption data-desc="Now you want to know">About Me</x-caption>
         </header>
+        <div class="flex-container">
         <article-group data-name="Follow Me">
           <article>
             <p>
@@ -116,6 +124,7 @@
             <br>But, I do have other intersests. I am intersted in travel photography, coding such as applicaton and website development, and gaming.</p>
           </article>
         </article-group>
+        </div>
       </section>
     </main>
 
