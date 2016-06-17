@@ -113,18 +113,18 @@ header {
       border: 2px solid rgba(240, 240, 240, 0.05);
       font-weight: bolder; }
     header x-logo b {
-      border: 2px solid #ffcc00;
+      border: 2px solid #ad4a3a;
       padding: 0.75em;
       display: inline-block;
       font-weight: normal;
       transition: all 0.3s ease; }
     header x-logo b:hover {
-      background-color: #ffcc00;
+      background-color: #ad4a3a;
       color: #141414; }
   header x-caption span {
-    color: #ffcc00; }
+    color: #ad4a3a; }
   header x-caption p {
-    font-size: 2rem;
+    font-size: 4rem;
     display: table-cell;
     vertical-align: middle;
     text-align: left; }
@@ -141,7 +141,7 @@ header {
       transition: all 0.3s ease; }
     header nav button:hover {
       cursor: pointer;
-      color: #ffcc00;
+      color: #ad4a3a;
       background: rgba(240, 240, 240, 0.05); }
 
 intro-text {
@@ -167,53 +167,66 @@ intro-text {
 main {
   position: relative;
   z-index: 1;
-  color: #141414;
+  background: #f0f0f0;
+  margin: 0 auto;
+  box-shadow: 0 0 15px 0px rgba(0, 0, 0, 0.5);
+  width: 100vw;
   flex-wrap: wrap; }
   main section {
     padding: 0px;
-    color: #f0f0f0;
-    background-color: #1c1c1c; }
+    color: #f0f0f0; }
     main section header {
+      background: #ebebeb;
+      color: #141414;
       box-sizing: border-box;
-      padding: 1.5em 2em 1.5em 4em; }
+      padding: 2em 8em 2em 8em; }
+    main section nav button {
+      color: black; }
     main section .flex-container {
+      align-items: flex-start;
       display: flex;
       overflow: auto;
       scroll-snap-points-x: repeat(100vw);
       scroll-snap-type: mandatory;
       -ms-overflow-style: none; }
     main section article-group {
+      color: black;
       white-space: normal;
       box-sizing: border-box;
       vertical-align: middle;
       min-height: 60vh;
-      background: #141414;
+      padding: 2em 8em 2em 8em;
       min-width: calc(100vw - 0em);
       max-width: calc(100vw - 0em); }
     main section .flex-container::-webkit-scrollbar {
       display: none; }
     main section article {
       box-sizing: border-box;
-      border: 2px solid #191919;
-      padding: 1.5em 2em 1.5em 2em;
-      margin: 0em 4em 0em 4em;
+      padding: 0em 0em 1.5em 0em;
       min-height: calc(100% - 2em);
       display: flex;
       flex-wrap: nowrap;
       justify-content: center;
-      letter-spacing: 0.02em;
-      color: rgba(240, 240, 240, 0.9); }
+      letter-spacing: 0.02em; }
       main section article figure {
         order: 99;
         display: inline-block; }
         main section article figure img {
           width: 600px; }
       main section article h1 {
-        font-size: 1.5rem; }
+        font-size: 2rem; }
+      main section article div {
+        padding: 1em; }
   main section.gallery {
     min-height: 0;
     background: black;
-    transition: min-height 0.5s ease; }
+    transition: min-height 0.5s ease;
+    padding: 0em 0em 2em 0em; }
+    main section.gallery header {
+      background: #141414;
+      color: white; }
+    main section.gallery nav button {
+      color: white; }
 
 x-gallery, gallery-group {
   display: block; }
