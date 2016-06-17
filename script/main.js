@@ -32,41 +32,6 @@
             }
            // Recreate Gallery
            this.innerHTML = `
-           <style>
-            x-gallery, gallery-group {display:block;}
-            x-gallery{
-            }
-            .filmstrip img{
-                transition:height 0.5s ease;
-                height:20vh;
-            }
-            .filmstrip.small img{
-                height:15vh;
-            }
-            
-            .viewer{
-                height:0;
-                overflow-x:auto;
-                overflow-y:hidden;
-                -ms-overflow-style: none;
-                display:flex;
-                flex-wrap:nowrap;
-                background-color:black;
-            }
-            .viewer.show{
-                height:Calc(85vh - 73.6px);
-            }
-            .viewer::-webkit-scrollbar { width: 0 !important }
-            .viewer div{
-                width:100%;
-                display:block;
-                height:100%;
-                background-position: center center;
-                background-repeat: no-repeat;
-                background-clip: border-box;
-                background-size: contain;  
-            }
-           </style>
            <div class="filmstrip">
            </div>
            <div class="viewer">
