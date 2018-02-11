@@ -17,11 +17,12 @@
 
 <body>
     <outer-container>
-        <header id="mainmenu" style="position: fixed;width: 100vw;box-sizing: border-box;z-index:1;">
+        <header id="mainmenu" style="box-sizing: border-box; position: fixed; width: 100vw; z-index: 100;">
             <x-logo>
-                <p>OUT OF</p><b>BOX</b><p style="color:rgb(20,20,20);border-color:rgb(255, 204, 0);background-color:rgb(255, 204, 0);border-left:0px;">β</p>
+                <p>OUT OF</p><b>BOX</b>
+                <p style="background-color: rgb(255, 204, 0); border-color: rgb(255, 204, 0); border-left: 0px; color: rgb(20, 20, 20);">β</p>
             </x-logo>
-            <div style="flex:auto" class="gutter">
+            <div style="flex: auto" class="gutter">
             </div>
             <nav id="mainnav">
                 <button data-target="#gallery">Photography</button>
@@ -32,7 +33,7 @@
         </header>
         <intro-text>
             <p>
-                <span style="font-size:70%;color:rgb(255, 204, 0);line-height: 0em;"><b>Suttisak</b> Denduangchai</span>
+                <span style="color: rgb(255, 204, 0); font-size: 70%; line-height: 0em;"><b>Suttisak</b> Denduangchai</span>
                 <br />A physician with an enthusiasm in <b>photography</b>, <b>coding</b>, <b>gaming</b>.
             </p>
         </intro-text>
@@ -66,9 +67,8 @@
                 <div class="flex-container">
                     <article-group data-name="Finished">
                         <article>
-
                             <figure>
-                                <img src="images/program/name_randomizer.png"></img>
+                                <img src="images/program/name_randomizer.png" />
                             </figure>
                             <div>
                                 <h1>Name Randomizer</h1>
@@ -88,7 +88,7 @@
                         </article>
                         <article>
                             <figure>
-                                <img src="images/program/medondemand.png"></img>
+                                <img src="images/program/medondemand.png" />
                             </figure>
                             <div>
                                 <h1>MedOndemand</h1>
@@ -97,6 +97,18 @@
                                     I wrote this software because I want a good method to randomly select classmates to be participated in a presentation when I was a medical student.
                                     I also use this program as a way to practice C# language.
                                     It has been created by using C# language in Visual Studio 2015.
+                                </p>
+                            </div>
+                        </article>
+                        <article>
+                            <figure>
+                                <img src="images/program/dtdoc.png" />
+                            </figure>
+                            <div>
+                                <h1>Document NX2</h1>
+                                <hr>
+                                <p>
+                                    A solution to ugly problem in the hospital.
                                 </p>
                             </div>
                         </article>
@@ -121,7 +133,7 @@
 
                 </div>
             </section>
-            <section id="about" class="about">
+            <!--<section id="about" class="about">
                 <header>
                     <x-caption data-desc="Now you want to know">About Me</x-caption>
                 </header>
@@ -143,14 +155,16 @@
                             <figure>
                             </figure>
                             <p>
-                                The world knows me as Suttisak Denduangchai.<wrb>
-                                    I has graduated from Faculty of Medicine at Chulalongkorn University. So, my profession is ,currently, a physician. <wbr>
+                                The world knows me as Suttisak Denduangchai.
+                                <wrb>
+                                    I has graduated from Faculty of Medicine at Chulalongkorn University. So, my profession is ,currently, a physician.
+                                    <wbr>
                                     <br>But, I do have other intersests. I am intersted in travel photography, coding such as applicaton and website development, and gaming.
                             </p>
                         </article>
                     </article-group>
                 </div>
-            </section>
+            </section>-->
         </main>
 
         <footer>

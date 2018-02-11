@@ -1,8 +1,10 @@
 "use strict";
+
 class HeaderCaption extends HTMLDivElement { // Tou can extend any other element or Class
     constructor() {
         super();
     }
+
     attachedCallback () {
         const div = document.createElement("div");
         div.style.flex = "auto";
@@ -16,13 +18,16 @@ class HeaderCaption extends HTMLDivElement { // Tou can extend any other element
         this.appendChild(sectionTitle);
     }
 }
+
 var galleryPosition;
 var target;
 var animatedFrameID = null;
+
 class ImageGallery extends HTMLDivElement {
     constructor() {
-        super()
+        super();
     }
+
     attachedCallback () {
         // Get Path to Thumnails
 
@@ -58,7 +63,7 @@ class ImageGallery extends HTMLDivElement {
         filmstrip.addEventListener("click",
             function(evt) {
                 event.preventDefault();
-                if (currentImage != event.target || isCollpase) {
+                if (currentImage !== event.target || isCollpase) {
                     currentImage = event.target;
                     galleryPosition = classGallery.getBoundingClientRect();
                     target = window.pageYOffset + galleryPosition.top;
@@ -66,12 +71,12 @@ class ImageGallery extends HTMLDivElement {
                     classGallery.style.minHeight = "100vh";
                     filmstrip.classList.add("small");
                     setTimeout(function() {
-                        viewer.classList.add("show");
-                        isCollpase = false;
-                    },
-                    520);
+                            viewer.classList.add("show");
+                            isCollpase = false;
+                        },
+                        520);
                     const fullpath = event.target.dataset.fullpath;
-                    if (fullpath != null || fullpath != undefined) {
+                    if (fullpath !== null || fullpath !== undefined) {
                         fullimg.style.backgroundImage = `url("${fullpath}")`;
                     }
 
@@ -102,10 +107,12 @@ function scroll(timestamp) {
         scrollStart = null;
     }
 }
+
 class ArticleGroup extends HTMLDivElement {
     constructor() {
         super();
     }
+
     attachedCallback () {
         this.style.display = "inline-block";
         // Get Articles Group Name
@@ -113,7 +120,7 @@ class ArticleGroup extends HTMLDivElement {
 
         let navNode = headerNode.querySelector("nav");
 
-        if (navNode == null) {
+        if (navNode === null) {
             navNode = document.createElement("nav");
         }
 
@@ -140,7 +147,7 @@ document.addEventListener("DOMContentLoaded",
             function(evt) {
                 evt.preventDefault();
                 const jumpTarget = evt.target.dataset.target;
-                if (jumpTarget != null || jumpTarget != "") {
+                if (jumpTarget !== null && jumpTarget !== "") {
                     let targetPosition = document.querySelector(jumpTarget);
                     targetPosition = targetPosition.getBoundingClientRect();
                     target = window.pageYOffset + targetPosition.top;
